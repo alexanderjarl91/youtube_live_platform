@@ -1,0 +1,58 @@
+.videos__container {
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.videos__searchInput {
+  background-color: #f0eded;
+  color: #acacac;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px 4px;
+  width: 95%;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  max-width: 400px;
+  padding-left: 14px;
+}
+
+.videos__searchInput::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1; /* Firefox */
+}
+
+.videos__searchInput:focus {
+  border: 1px solid lightgray;
+}
+
+.videos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.videos__loading {
+  margin-top: 3rem;
+}
+
+.videos__broadcasts {
+  margin-top: 1rem;
+
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .videos__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1080px) {
+  .videos__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 80px;
+  }
+}

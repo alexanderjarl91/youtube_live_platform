@@ -1,0 +1,28 @@
+.header__container {
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.header__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 31px;
+  width: 34px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.line {
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #acacac;
+}
+
+.header__logo {
+  height: 34px;
+  align-self: center;
+}

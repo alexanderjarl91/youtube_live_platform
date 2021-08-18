@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import youtube from "./api/youtube";
+
+//components
+import Header from "./components/Header";
+import Headline from "./components/Headline";
+import Videos from "./components/Videos";
 
 function App() {
+  const [videos, setVideos] = useState([]);
+  const searchString = "Alexander Jarl";
+
+  const getVideos = async (query) => {
+    const response = await youtube.get("/search", {
+      params: {
+        q: query,
+      },
+    });
+    setVideos([response.data.items]);
+  };
+
+  useEffect(() => {
+    console.log("videos:", videos);
+  }, [videos]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      
+      <Headline />
+      <Videos />
+
+      {/* <button onClick={()=> {
+      getVideos(searchString)
+    }}>Search</button> */}
+  
     </div>
   );
 }
